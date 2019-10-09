@@ -1,14 +1,13 @@
-import mongoose from "mongoose";
-import config from "../../../config";
-import User from "../../models/User";
+import mongoose from 'mongoose';
+import User from '../../models/User';
+import { mongoURL, mongoOptions } from '../../lib/mongoHelpers';
 
-mongoose.Promise = require("bluebird");
-mongoose.connect(config.db, { useNewUrlParser: true });
+mongoose.Promise = require('bluebird');
+mongoose.connect(mongoURL, mongoOptions);
 
 export const resolvers = {
   Query: {
     getUsers: async (_, args, context) => {
-      console.log(context);
       const users = await User.find();
 
       return users;

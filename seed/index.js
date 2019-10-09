@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import faker from "faker";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
